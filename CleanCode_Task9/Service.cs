@@ -1,6 +1,6 @@
 ﻿namespace CleanCode_Task9
 {
-    public class Service
+    public class Service : IService
     {
         private readonly Repository _repository;
 
@@ -9,15 +9,14 @@
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-        public event Action<Citizen> CitizenFoundInDataBase;
-        public event Action<Passport> CitizenNotFoundInDataBase;
-
-        public void TryFoundCitizen(Passport passport)
+        public Citizen TryFoundCitizen(Passport passport)
         {
-            if (_repository.TryFoundCitizen(passport, out Citizen citizen))
-                CitizenFoundInDataBase?.Invoke(citizen);
+            Citizen citizen = _repository.TryFoundCitizen(passport);
+
+            if (citizen != null)
+                return citizen;
             else
-                CitizenNotFoundInDataBase?.Invoke(passport);
+                return null;
         }
     }
 }

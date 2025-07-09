@@ -30,3 +30,4 @@ C:\Users\Lenovo\Desktop\Работа с паттерном MVP\CleanCode_Task9\C
 C:\Users\Lenovo\Desktop\Работа с паттерном MVP\CleanCode_Task9\CleanCode_Task9\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Lenovo\Desktop\Работа с паттерном MVP\CleanCode_Task9\CleanCode_Task9\obj\Debug\net8.0-windows\CleanCode_Task9.csproj.AssemblyReference.cache
 C:\Users\Lenovo\Desktop\Работа с паттерном MVP\CleanCode_Task9\CleanCode_Task9\obj\Debug\net8.0-windows\CleanCod.C8985004.Up2Date
+C:\Users\Lenovo\Desktop\Работа с паттерном MVP\CleanCode_Task9\CleanCode_Task9\obj\Debug\net8.0-windows\CleanCode_Task9.sourcelink.json

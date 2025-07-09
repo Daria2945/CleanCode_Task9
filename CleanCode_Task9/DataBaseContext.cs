@@ -6,15 +6,12 @@ namespace CleanCode_Task9
 {
     public class DataBaseContext
     {
-        private SQLiteConnection _connection;
-        private SQLiteDataAdapter _adapter;
-
         public DataTable GetDataTable(string hashPassport)
         {
-            _connection = new SQLiteConnection(GetConnectionString());
+            SQLiteConnection _connection = new SQLiteConnection(GetConnectionString());
             _connection.Open();
 
-            _adapter = new SQLiteDataAdapter(GetCommandString(hashPassport), _connection);
+            SQLiteDataAdapter _adapter = new SQLiteDataAdapter(GetCommandString(hashPassport), _connection);
 
             DataTable dataTable = new DataTable();
             _adapter.Fill(dataTable);

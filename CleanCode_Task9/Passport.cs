@@ -2,13 +2,24 @@
 {
     public class Passport
     {
-        private readonly string _seriesNumber;
+        private const string MissingDataMessage = "Введите серию и номер паспорта";
+        private const string InvalidFormatMessage = "Неверный формат серии или номера паспорта";
+        private const int LengthPassportInfo = 10;
 
         public Passport(string seriesNumber)
         {
-            _seriesNumber = seriesNumber ?? throw new ArgumentNullException(nameof(seriesNumber));
+            if (seriesNumber.Trim() == string.Empty)
+                throw new ArgumentException(MissingDataMessage);
+
+            string space = " ";
+            string rawData = seriesNumber.Trim().Replace(space, string.Empty);
+
+            if (rawData.Length != LengthPassportInfo)
+                throw new ArgumentException(InvalidFormatMessage);
+
+            SeriesNumber = rawData;
         }
 
-        public string SeriesNumber => _seriesNumber;
+        public string SeriesNumber { get; }
     }
 }

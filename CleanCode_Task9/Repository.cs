@@ -12,22 +12,18 @@ namespace CleanCode_Task9
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public bool TryFoundCitizen(Passport passport, out Citizen citizen)
+        public Citizen TryFoundCitizen(Passport passport)
         {
-            citizen = null;
             string hashPassport = HashSystem.ComputeSha256Hash(passport.SeriesNumber);
-
-            _context.GetDataTable(hashPassport);
+            _dataTable = _context.GetDataTable(hashPassport);
 
             if (_dataTable.Rows.Count == 0)
-                return false;
+                return null;
 
             int canVoteIndex = 1;
             bool canVote = Convert.ToBoolean(_dataTable.Rows[0].ItemArray[canVoteIndex]);
 
-            citizen = CreateCitizen(passport, canVote);
-
-            return true;
+            return CreateCitizen(passport, canVote); ;
         }
 
         private Citizen CreateCitizen(Passport passport, bool canVote)

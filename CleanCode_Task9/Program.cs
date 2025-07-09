@@ -7,13 +7,13 @@ namespace CleanCode_Task9
         {
             ApplicationConfiguration.Initialize();
 
-            View view = new View();
-
             DataBaseContext context = new DataBaseContext();
             Repository repository = new Repository(context);
             Service service = new Service(repository);
 
-            Presenter presenter = new Presenter(view, service);
+            PresenterFactory presenterFactory = new PresenterFactory(service);
+
+            View view = new View(presenterFactory);
 
             Application.Run(view);
         }

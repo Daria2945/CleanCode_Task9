@@ -1,13 +1,15 @@
 namespace CleanCode_Task9
 {
-    public partial class View : Form
+    public partial class View : Form, IView
     {
-        public View()
+        private readonly IPresenter _presenter;
+
+        public View(PresenterFactory presenterFactory)
         {
             InitializeComponent();
-        }
 
-        public event Action<TextBox> EnterButtonClicked;
+            _presenter = presenterFactory.Create(this);
+        }
 
         public void ShowMessageBox(string message)
         {
@@ -25,7 +27,7 @@ namespace CleanCode_Task9
 
         private void EnterButton_Click(object sender, EventArgs e)
         {
-            EnterButtonClicked?.Invoke(this.EnteredText);
+            _presenter.ProccessEnteredText(this.EnteredText);
         }
     }
 }
