@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CleanCode_Task9")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+481211e1271dd711a388e09e41227f4347b83f70")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6b8b6a45cb11e133fa2fbe35a02fc056aa9d1b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("CleanCode_Task9")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CleanCode_Task9")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,7 +2,7 @@
 {
     public class PresenterFactory
     {
-        private IService _service;
+        private readonly IService _service;
 
         public PresenterFactory(IService service)
         {

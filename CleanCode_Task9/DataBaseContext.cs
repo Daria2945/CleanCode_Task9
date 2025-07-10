@@ -8,6 +8,8 @@ namespace CleanCode_Task9
     {
         public DataTable GetDataTable(string hashPassport)
         {
+            ArgumentNullException.ThrowIfNull(hashPassport);
+
             SQLiteConnection _connection = new SQLiteConnection(GetConnectionString());
             _connection.Open();
 

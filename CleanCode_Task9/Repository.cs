@@ -14,6 +14,8 @@ namespace CleanCode_Task9
 
         public Citizen TryFoundCitizen(Passport passport)
         {
+            ArgumentNullException.ThrowIfNull(passport);
+
             string hashPassport = HashSystem.ComputeSha256Hash(passport.SeriesNumber);
             _dataTable = _context.GetDataTable(hashPassport);
 
@@ -28,8 +30,6 @@ namespace CleanCode_Task9
 
         private Citizen CreateCitizen(Passport passport, bool canVote)
         {
-            ArgumentNullException.ThrowIfNull(passport);
-
             return new Citizen(passport, canVote);
         }
     }
